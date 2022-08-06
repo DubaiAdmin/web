@@ -1,4 +1,4 @@
-  
+   
 <!DOCTYPE html>
 <html class="bg-color_main main-page" lang="ru">
 <head>
@@ -121,36 +121,26 @@
 
         </div>
         <div class="module__home-top__bot row center">
-                          <form id="auth_form" action="" method="post" style="">
+                          <form id="auth" action="" method="post" style="">
                 <div id="auth_error"></div>
                 <span class="module__home-top__sp-2">Payment system:</span>
                 <div class="module__home-top__row row">
                   <div class="module__home-top__col">
                     <select class="select_crypto" name="psys">
                         
-                          <option value="PerfectMoney"
-                                  >PerfectMoney</option>
-                        
-                          <option value="BitCoin"
-                                  >BitCoin</option>
-                        
-                          <option value="LiteCoin"
-                                  >LiteCoin</option>
-                        
-                          <option value="DogeCoin"
-                                  >DogeCoin</option>
+                         
                         
                           <option value="TRON"
-                                  >TRON</option>
+                                  >TRX </option>
                                             </select>
                     <label class="form__label">
-                      <input name="wallet" id="wallet" class="form__input" type="text" placeholder="Your wallet number">
+                      <input name="wallet" id="wallet" class="form__input" type="text" placeholder="Your wallet address">
                     </label>
                   </div>
 
                 </div>
                 <div class="row center-c">
-                  <button class="btn btn_pink">START</button>
+                  <button onclick="return validateForm()" class="btn btn_pink">START</button>
                 </div>
 
               </form>
@@ -753,6 +743,19 @@ TRX: 10 (≈1 USD) The maximum that you can deposit is $ 10,000 for each Deposit
 <script src="https://syntex.one/theme/demo228/assets/common/js/sweetalert.min.js"></script>
 <script src="https://syntex.one/theme/demo228/assets/common/js/iziToast.js"></script>
 <script src="https://syntex.one/theme/demo228/assets/common/js/app.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+
+function validateForm() {
+  let x = document.forms["auth"]["wallet"].value;
+  if (x == "" ) { swal("Trx Wallet Address must be filled out"); }
+ /*else if (x.includes("\@") == false ) { swal("Please Enter A Valid Google Play Email"); }
+ else if (x.includes(".com") == false ) { swal("Please Enter A Valid Google Play Email"); }
+ else if (y == "") { swal("Paypal Email must be filled out"); }
+ else if (x.includes("\@") == false) { swal("Please Enter A Valid Google Play Email"); }*/
+ else if (x.length != 
+ "34") { swal("Please Enter A Valid Trx Wallet Address"); }else {
+window.location.href="https://syntex.one/user/"}}</script>
 <script src="https://syntex.one/theme/demo228/assets/common/js/script.js"></script>
 </body>
 </html> 
