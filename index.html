@@ -1,0 +1,758 @@
+  
+<!DOCTYPE html>
+<html class="bg-color_main main-page" lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://syntex.one/theme/demo228/assets/common/css/popups_alerts_alax.css">
+    <link rel="stylesheet" href="https://syntex.one/theme/demo228/assets/common/css/sweetalert.css">
+    <link rel="stylesheet" href="https://syntex.one/theme/demo228/assets/common/css/sswm.css">
+    <link rel="stylesheet" href="/theme/demo228/assets/common/css/iziToast.min.css">
+    <meta charset="UTF-8" />
+    <title>Syntex</title>
+    <link rel="stylesheet" href="https://syntex.one/theme/demo/assets/common/font-awesome/css/font-awesome.min.css" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta name="robots" content="noodp, noydir" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <link rel="stylesheet" href="/theme/demo228/assets/common/css/style.min.css" />
+    <link rel="image_src" href="img/preview.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" href="img/favicon.png" />
+    <link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#ff3333" />
+    <meta name="msapplication-TileColor" content="#333366" />
+    <meta name="msapplication-TileImage" content="/template/CryptoFX/assets/favicons/mstile-144x144.png" />
+    <meta name="msapplication-config" content="/template/CryptoFX/assets/favicons/browserconfig.xml" />
+    <meta name="theme-color" content="#333366" />
+    <link href="https://fonts.googleapis.com/css?family=Didact+Gothic|Oswald:300,400,500,700&display=swap" rel="stylesheet">
+    <script src="//icon-box.live/sprite/latest/"></script>
+</head>
+  <body class="page">
+<div class="page__wrapper particles-wrapper">
+  <div id="particles-js"></div>
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container">
+      <div class="row center between">
+        <!-- module__logo -->
+        <div class="module__logo module__logo_main">
+          <a class="module__logo__link" href="/"></a>
+        </div>
+        <!-- end of module__logo -->
+        <nav class="main-menu_home">
+          <ul class="row between">
+            <li class="main-menu_home__item">
+              <a class="main-menu_home__link scroll-to" href="#home">Home</a>
+            </li>
+            <li class="main-menu_home__item">
+              <a class="main-menu_home__link scroll-to" href="#faq">FAQ</a>
+            </li>
+              
+          </ul>
+        </nav>
+        <!-- module__lang -->
+        <div class="module__lang jsContPar jsLang">
+          
+          <ul class="module__lang__dropdown animated fadeIn jsContainer shadow">
+                                                  <li class="module__lang__item module__lang__item ">
+                    <a class="module__lang__link" href="/?lng=ru">
+                      <span class="module__lang__str-2">ru</span>
+                    </a>
+                  </li>
+                                                                                                                                                                                                                                                                          </ul>
+        </div>
+        <!-- end of module__lang -->
+      </div>
+    </div>
+  </header>
+  <!-- Main -->
+  <main class="main">
+
+    <script type="text/javascript">
+
+      function depTimer(duration, display) {
+        if (parseInt(duration) <= 0) {
+          display.textContent = "Завершено";
+        } else {
+          var timer = duration, minutes, seconds;
+          setInterval(function () {
+            hours = parseInt(timer / 3600, 10);
+            minutes = parseInt((timer / 60) % 60, 10);
+            seconds = parseInt(timer % 60, 10);
+
+            hours = hours < 10 ? "0" + hours : hours;
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+
+            display.textContent = hours + ":" + minutes + ":" + seconds;
+
+            if (timer <= 0) {
+              display.textContent = "Завершено";
+            }
+            if (--timer < 0) {
+              timer = duration;
+            }
+          }, 1000);
+        }
+      }
+    </script>
+
+    <!-- module__home-top -->
+    <div class="module__home-top">
+      <div class="container">
+        <div class="module__home-top__top">
+          <h1><span>syntex.one</span> 
+           
+          </h1>
+          <h1>DOUBLE YOUR MONEY IN 24 HOURS</h1>
+          <p class="module__home-top__sp-1">
+              Enter your address and select a payment system:              </p>
+              
+          <!-- module__days -->
+          <div class="module__days">
+            <div class="module__days__wrap">
+              <div class="module__days__day">
+                <span class="module__days__sp-2">30</span>
+              </div>
+              <span class="module__days__sp">days online</span>
+            </div>
+          </div>
+          <!-- end of module__days -->
+
+        </div>
+        <div class="module__home-top__bot row center">
+                          <form id="auth_form" action="" method="post" style="">
+                <div id="auth_error"></div>
+                <span class="module__home-top__sp-2">Payment system:</span>
+                <div class="module__home-top__row row">
+                  <div class="module__home-top__col">
+                    <select class="select_crypto" name="psys">
+                        
+                          <option value="PerfectMoney"
+                                  >PerfectMoney</option>
+                        
+                          <option value="BitCoin"
+                                  >BitCoin</option>
+                        
+                          <option value="LiteCoin"
+                                  >LiteCoin</option>
+                        
+                          <option value="DogeCoin"
+                                  >DogeCoin</option>
+                        
+                          <option value="TRON"
+                                  >TRON</option>
+                                            </select>
+                    <label class="form__label">
+                      <input name="wallet" id="wallet" class="form__input" type="text" placeholder="Your wallet number">
+                    </label>
+                  </div>
+
+                </div>
+                <div class="row center-c">
+                  <button class="btn btn_pink">START</button>
+                </div>
+
+              </form>
+                    </div>
+
+      </div>
+    </div>
+    <!-- end of module__home-top -->
+
+    <!-- module__home-stat -->
+    <div class="module__home-stat jsParent">
+      <div class="container">
+        <div class="ta-center">
+          <h2>STATISTICS</h2>
+          <span class="s-title">
+              Here you can check the latest deposits and payouts          </span>
+        </div>
+        <div class="module__home-stat__tabs">
+          <div class="module__home-stat__row row center-c">
+            <span class="module__home-stat__tab jsTab jsActive">
+                Recent deposits            </span>
+            <span class="module__home-stat__tab jsTab">
+                Last payouts            </span>
+          </div>
+        </div>
+      </div>
+      <div class="module__home-stat__cont jsCont jsActive">
+        <div class="module__home-stat__table">
+          <div class="module__home-stat__last">
+              Recent deposits
+          </div>
+          <div class="container">
+            <table class="card-table">
+              <thead>
+              <tr>
+                <th>
+                    TIME                </th>
+                <th>
+                    ADRESS                </th>
+                <th>
+                    AMOUNT                </th>
+                <th>
+                    STATUS                </th>
+              </tr>
+              </thead>
+              <tbody>
+                                            <tr>
+                  <td>05:08:22 09:47:10</td>
+                  <td>
+                      
+                    <a href="#">
+                        TFpNuaheZP3qBpA4dXdhUTNbpta4ke...                    </a>
+                  </td>
+                                      <td>7.30<i class="fa fa-usd"></i></td>
+                  <td class="last">
+                    <span class="done" id="timer_0">15:49:44</span>
+                  </td>
+                </tr>
+                <script type="text/javascript">
+                  var remtime = 46184;
+                  var display = document.getElementById("timer_0");
+                  depTimer(remtime, display);
+                </script>
+                                                <tr>
+                  <td>05:08:22 05:15:43</td>
+                  <td>
+                      
+                    <a href="#">
+                        TJQRRJiKiKStTx6bbBzCX6dwY8etzZ...                    </a>
+                  </td>
+                                      <td>1.00<i class="fa fa-usd"></i></td>
+                  <td class="last">
+                    <span class="done" id="timer_1">11:18:17</span>
+                  </td>
+                </tr>
+                <script type="text/javascript">
+                  var remtime = 29897;
+                  var display = document.getElementById("timer_1");
+                  depTimer(remtime, display);
+                </script>
+                                
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="module__home-stat__cont jsCont">
+        <div class="module__home-stat__table">
+          <div class="module__home-stat__last">
+              Last payouts          </div>
+          <div class="container">
+            <table class="card-table">
+              <thead>
+              <tr>
+                <th>TIME</th>
+                <th>ADRESS</th>
+                <th>AMOUNT</th>
+                <th>STATUS</th>
+              </tr>
+              </thead>
+              <tbody>
+                              <tr>
+                  <td>05:08:22 09:50:06</td>
+                  <td>
+                                          <a href="#">
+                        DRvHAwGHoN4LMSBUB3qdkh9EDV4NJK...                    </a>
+                  </td>
+                  <td>2.06 <i class="fa fa-usd"></i> DogeCoin</td>
+                  <td class="last">
+                    <span class="done">
+                        Payouted                    </span>
+                  </td>
+                </tr>
+                              <tr>
+                  <td>04:08:22 03:23:41</td>
+                  <td>
+                                          <a href="#">
+                        U3884...                    </a>
+                  </td>
+                  <td>2.00 <i class="fa fa-usd"></i> PerfectMoney</td>
+                  <td class="last">
+                    <span class="done">
+                        Payouted                    </span>
+                  </td>
+                </tr>
+                              <tr>
+                  <td>03:08:22 18:11:00</td>
+                  <td>
+                                          <a href="#">
+                        U1244...                    </a>
+                  </td>
+                  <td>2.00 <i class="fa fa-usd"></i> PerfectMoney</td>
+                  <td class="last">
+                    <span class="done">
+                        Payouted                    </span>
+                  </td>
+                </tr>
+                              <tr>
+                  <td>03:08:22 06:31:56</td>
+                  <td>
+                                          <a href="#">
+                        U3827...                    </a>
+                  </td>
+                  <td>10.00 <i class="fa fa-usd"></i> PerfectMoney</td>
+                  <td class="last">
+                    <span class="done">
+                        Payouted                    </span>
+                  </td>
+                </tr>
+                              <tr>
+                  <td>03:08:22 03:20:42</td>
+                  <td>
+                                          <a href="#">
+                        U7940...                    </a>
+                  </td>
+                  <td>0.20 <i class="fa fa-usd"></i> PerfectMoney</td>
+                  <td class="last">
+                    <span class="done">
+                        Payouted                    </span>
+                  </td>
+                </tr>
+                              <tr>
+                  <td>03:08:22 03:17:03</td>
+                  <td>
+                                          <a href="#">
+                        DJDJVNj7MaS4K65jcNX6vf7iEeyvrE...                    </a>
+                  </td>
+                  <td>1.00 <i class="fa fa-usd"></i> DogeCoin</td>
+                  <td class="last">
+                    <span class="done">
+                        Payouted                    </span>
+                  </td>
+                </tr>
+                              <tr>
+                  <td>03:08:22 00:02:46</td>
+                  <td>
+                                          <a href="#">
+                        DJDJVNj7MaS4K65jcNX6vf7iEeyvrE...                    </a>
+                  </td>
+                  <td>1.00 <i class="fa fa-usd"></i> DogeCoin</td>
+                  <td class="last">
+                    <span class="done">
+                        Payouted                    </span>
+                  </td>
+                </tr>
+                              <tr>
+                  <td>02:08:22 07:47:01</td>
+                  <td>
+                                          <a href="#">
+                        DMQgaJzUZQSYAKoq8SmwqdY2trqGxB...                    </a>
+                  </td>
+                  <td>2.00 <i class="fa fa-usd"></i> DogeCoin</td>
+                  <td class="last">
+                    <span class="done">
+                        Payouted                    </span>
+                  </td>
+                </tr>
+                              <tr>
+                  <td>01:08:22 07:30:59</td>
+                  <td>
+                                          <a href="#">
+                        U3312...                    </a>
+                  </td>
+                  <td>0.20 <i class="fa fa-usd"></i> PerfectMoney</td>
+                  <td class="last">
+                    <span class="done">
+                        Payouted                    </span>
+                  </td>
+                </tr>
+                              <tr>
+                  <td>01:08:22 00:06:57</td>
+                  <td>
+                                          <a href="#">
+                        D68ebKtcJ6yQnT3kLHVYaAtUYdUgPk...                    </a>
+                  </td>
+                  <td>10.00 <i class="fa fa-usd"></i> DogeCoin</td>
+                  <td class="last">
+                    <span class="done">
+                        Payouted                    </span>
+                  </td>
+                </tr>
+                            </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end of module__home-stat -->
+    <!-- module__home-partner -->
+    <div class="module__home-partner">
+      <div class="container">
+        <div class="module__home-partner__row row center col__left between">
+          <div class="module__home-partner__col">
+            <span class="module__home-partner__sp-1">
+                20% Referral Program            </span>
+            <span class="module__home-partner__sp-2">
+                Earn high 20% commission instantly paid to your wallet from every referral"s deposit.                All payments are automated.            </span>
+          </div>
+          <div class="module__home-partner__wrap">
+            <img class="module__home-partner__img" src="img/bg1.png" alt="png" />
+          </div>
+        </div>
+        <div class="module__home-partner__row row center col__right between">
+          <div class="module__home-partner__wrap">
+            <img class="module__home-partner__img" src="img/bg2.png" alt="png" />
+          </div>
+          <div class="module__home-partner__col">
+            <span class="module__home-partner__sp-1">
+                Professional protection            </span>
+            <span class="module__home-partner__sp-2">
+                We use strong DDoS protection and a trusted SSL certificate to protect your personal information.            </span>
+          </div>
+        </div>
+        <div class="module__home-partner__row row center col__left between">
+          <div class="module__home-partner__col">
+            <span class="module__home-partner__sp-1">
+                Automatic payouts            </span>
+            <span class="module__home-partner__sp-2">
+                All operations are automated.                We use fast and fault-tolerant server solutions. Therefore, in our system no delays.            </span>
+          </div>
+          <div class="module__home-partner__wrap">
+            <img class="module__home-partner__img" src="img/bg3.png" alt="png" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end of module__home-partner -->
+
+    <!-- module__home-faq -->
+    <div class="module__home-faq" id="faq">
+      <div class="container">
+        <div class="ta-center">
+          <h2>
+              FREQUENTLY ASKED QUESTIONS          </h2>
+         
+        </div>
+        <div class="module__home-faq__wrap">
+          <ul class="module__home-faq__ul jsAccordion">
+                                                          <li class="module__home-faq__li">
+                        <a class="module__home-faq__a" href="">
+                            How to register?                          <div class="ic">
+                            <div class="icon-wrap">
+                              <svg class="icon icon_plus">
+                                <use xlink:href="img/icons.svg#plus"></use>
+                              </svg>
+                              <svg class="icon icon_minus">
+                                <use xlink:href="img/icons.svg#minus"></use>
+                              </svg>
+                            </div>
+                          </div>
+                        </a>
+                        <ul class="module__home-faq__ul-2">
+                          <li>
+                            <p>
+                                This procedure is very simple and takes only a few seconds. To register, enter in the input field (on the main page of the site) the address or number of one of your wallets BTC/LTC/DOGE/TRX/PerfectMoney, then click ″ START ″.                            </p>
+                          </li>
+                        </ul>
+                      </li>
+                                            <li class="module__home-faq__li">
+                        <a class="module__home-faq__a" href="">
+                            How many accounts can I register?                          <div class="ic">
+                            <div class="icon-wrap">
+                              <svg class="icon icon_plus">
+                                <use xlink:href="img/icons.svg#plus"></use>
+                              </svg>
+                              <svg class="icon icon_minus">
+                                <use xlink:href="img/icons.svg#minus"></use>
+                              </svg>
+                            </div>
+                          </div>
+                        </a>
+                        <ul class="module__home-faq__ul-2">
+                          <li>
+                            <p>
+                                One user can register one account for each payment system. Multiple registrations for the purpose of receiving partner rewards is prohibited and entails blocking all accounts associated with the offender`s profile.                            </p>
+                          </li>
+                        </ul>
+                      </li>
+                                            <li class="module__home-faq__li">
+                        <a class="module__home-faq__a" href="">
+                            What payment system can I use to make a deposit?                          <div class="ic">
+                            <div class="icon-wrap">
+                              <svg class="icon icon_plus">
+                                <use xlink:href="img/icons.svg#plus"></use>
+                              </svg>
+                              <svg class="icon icon_minus">
+                                <use xlink:href="img/icons.svg#minus"></use>
+                              </svg>
+                            </div>
+                          </div>
+                        </a>
+                        <ul class="module__home-faq__ul-2">
+                          <li>
+                            <p>
+                                Company works directly with 5 payment systems - Bitcoin, LiteCoin, DogeCoin, Tron, PerfectMoney.                            </p>
+                          </li>
+                        </ul>
+                      </li>
+                                            <li class="module__home-faq__li">
+                        <a class="module__home-faq__a" href="">
+                            What is the minimum and maximum deposit amount?                          <div class="ic">
+                            <div class="icon-wrap">
+                              <svg class="icon icon_plus">
+                                <use xlink:href="img/icons.svg#plus"></use>
+                              </svg>
+                              <svg class="icon icon_minus">
+                                <use xlink:href="img/icons.svg#minus"></use>
+                              </svg>
+                            </div>
+                          </div>
+                        </a>
+                        <ul class="module__home-faq__ul-2">
+                          <li>
+                            <p>
+                                The minimum deposit amount is Min Invest : 
+PerfectMoney: 0.1 USD
+BTC : 0.0001(≈5 USD)
+DOGE : 5 (≈1 USD)
+LTC : 0.005 (≈1 USD)
+TRX: 10 (≈1 USD) The maximum that you can deposit is $ 10,000 for each Deposit.
+                            </p>
+                          </li>
+                        </ul>
+                      </li>
+                                            <li class="module__home-faq__li">
+                        <a class="module__home-faq__a" href="">
+                            When was the start?                          <div class="ic">
+                            <div class="icon-wrap">
+                              <svg class="icon icon_plus">
+                                <use xlink:href="img/icons.svg#plus"></use>
+                              </svg>
+                              <svg class="icon icon_minus">
+                                <use xlink:href="img/icons.svg#minus"></use>
+                              </svg>
+                            </div>
+                          </div>
+                        </a>
+                        <ul class="module__home-faq__ul-2">
+                          <li>
+                            <p>
+                                July 6th, 2022
+                            </p>
+                          </li>
+                        </ul>
+                      </li>
+                                            <li class="module__home-faq__li">
+                        <a class="module__home-faq__a" href="">
+                            I entered money through one wallet, but can I withdraw through another?
+                          <div class="ic">
+                            <div class="icon-wrap">
+                              <svg class="icon icon_plus">
+                                <use xlink:href="img/icons.svg#plus"></use>
+                              </svg>
+                              <svg class="icon icon_minus">
+                                <use xlink:href="img/icons.svg#minus"></use>
+                              </svg>
+                            </div>
+                          </div>
+                        </a>
+                        <ul class="module__home-faq__ul-2">
+                          <li>
+                            <p>
+                                As part of the technical capabilities of our company, withdrawals are made only to the wallet that was entered at the time of registration.
+                            </p>
+                          </li>
+                        </ul>
+                      </li>
+                                            <li class="module__home-faq__li">
+                        <a class="module__home-faq__a" href="">
+                            How are funds withdrawn from the system?
+                          <div class="ic">
+                            <div class="icon-wrap">
+                              <svg class="icon icon_plus">
+                                <use xlink:href="img/icons.svg#plus"></use>
+                              </svg>
+                              <svg class="icon icon_minus">
+                                <use xlink:href="img/icons.svg#minus"></use>
+                              </svg>
+                            </div>
+                          </div>
+                        </a>
+                        <ul class="module__home-faq__ul-2">
+                          <li>
+                            <p>
+                                Payment is fully automated and occurs instantly and usually takes from 1 to 5 minutes.
+                            </p>
+                          </li>
+                        </ul>
+                      </li>
+                                            <li class="module__home-faq__li">
+                        <a class="module__home-faq__a" href="">
+                            What remuneration does the Affiliate Program provide?                          <div class="ic">
+                            <div class="icon-wrap">
+                              <svg class="icon icon_plus">
+                                <use xlink:href="img/icons.svg#plus"></use>
+                              </svg>
+                              <svg class="icon icon_minus">
+                                <use xlink:href="img/icons.svg#minus"></use>
+                              </svg>
+                            </div>
+                          </div>
+                        </a>
+                        <ul class="module__home-faq__ul-2">
+                          <li>
+                            <p>
+                                You will receive 20% from each deposit of your referral immediately to your registered wallet.
+                            </p>
+                          </li>
+                        </ul>
+                      </li>
+                                            <li class="module__home-faq__li">
+                        <a class="module__home-faq__a" href="">
+                            My account is PM, and my partner opened a deposit in BTC. How will the accrual take place?
+                          <div class="ic">
+                            <div class="icon-wrap">
+                              <svg class="icon icon_plus">
+                                <use xlink:href="img/icons.svg#plus"></use>
+                              </svg>
+                              <svg class="icon icon_minus">
+                                <use xlink:href="img/icons.svg#minus"></use>
+                              </svg>
+                            </div>
+                          </div>
+                        </a>
+                        <ul class="module__home-faq__ul-2">
+                          <li>
+                            <p>
+                                Affiliate reward will be converted into the currency of your account at the current exchange rate and paid to your PM account automatically.
+                            </p>
+                          </li>
+                        </ul>
+                      </li>
+                                            <li class="module__home-faq__li">
+                        <a class="module__home-faq__a" href="">
+                            Do you protect users` personal data and what is the level of this protection?
+                          <div class="ic">
+                            <div class="icon-wrap">
+                              <svg class="icon icon_plus">
+                                <use xlink:href="img/icons.svg#plus"></use>
+                              </svg>
+                              <svg class="icon icon_minus">
+                                <use xlink:href="img/icons.svg#minus"></use>
+                              </svg>
+                            </div>
+                          </div>
+                        </a>
+                        <ul class="module__home-faq__ul-2">
+                          <li>
+                            <p>
+                                In the course of its work, the company uses special software, encryption and SSL certificates, which allows each investor to guarantee the protection of his personal data from leakage and unauthorized use, as well as the uninterrupted operation of all services and repelling DDOS attacks.
+                            </p>
+                          </li>
+                        </ul>
+                      </li>
+                                            <li class="module__home-faq__li">
+                        <a class="module__home-faq__a" href="">
+                            Do you guarantee fair observance of the Rules in relation to the investor?
+                          <div class="ic">
+                            <div class="icon-wrap">
+                              <svg class="icon icon_plus">
+                                <use xlink:href="img/icons.svg#plus"></use>
+                              </svg>
+                              <svg class="icon icon_minus">
+                                <use xlink:href="img/icons.svg#minus"></use>
+                              </svg>
+                            </div>
+                          </div>
+                        </a>
+                        <ul class="module__home-faq__ul-2">
+                          <li>
+                            <p>
+                                The key value for the company is its reputation, therefore, in working with each investor, we guarantee compliance with the rules and regulations stipulated by a special Regulation, which includes ensuring financial activities and receiving an honestly earned profit by the investor.
+                            </p>
+                          </li>
+                        </ul>
+                      </li>
+                                                                                    <li class="module__home-faq__li">
+                        <a class="module__home-faq__a" href="">
+                            Didn`t find the answer to your question here?
+                          <div class="ic">
+                            <div class="icon-wrap">
+                              <svg class="icon icon_plus">
+                                <use xlink:href="img/icons.svg#plus"></use>
+                              </svg>
+                              <svg class="icon icon_minus">
+                                <use xlink:href="img/icons.svg#minus"></use>
+                              </svg>
+                            </div>
+                          </div>
+                        </a>
+                        <ul class="module__home-faq__ul-2">
+                          <li>
+                            <p>
+                                Please contact our support specialists by e-mail.                            </p>
+                          </li>
+                        </ul>
+                      </li>
+                                        
+          </ul>
+        </div>
+
+      </div>
+    </div>
+    <!-- end of module__home-faq -->      </main>
+  <!-- Footer -->
+<footer class="footer">
+    <div class="footer__wrap">
+        <div class="container">
+            <!-- module__logo -->
+            <div class="module__logo module__logo_main">
+                <a class="module__logo__link" href="/"></a>
+            </div>
+            <!-- end of module__logo -->
+            <div class="footer__col-3 row">
+                <div class="footer__col-2">
+                    <span class="footer__st">support E-mail</span>
+                    <a class="footer__link" href="mailto:admin@syntex.one"> admin@syntex.one</a>
+                </div>
+                <div class="footer__col-2">
+                    <span class="footer__st">SYNTEX.ONE</span>
+                
+                </div>
+                <div class="footer__col-2">
+                    <span class="footer__st">Terms of use</span>
+                    <a class="footer__link" href="/rules" target="_top"> Rules</a>
+                </div>
+            </div>
+            <!--- ADD ME BEFORE </head> --->
+    <script src="https://paykassa.pro/widgets/?lng=en&rid=11907"></script>
+<!--- ADD ME BEFORE </head> --->
+            <p>Copyright © 2021. Syntex . All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+</div>
+
+<!-- Scripts -->
+<script src="/theme/demo228/assets/common/js/plugins.min.js"></script>
+<script src="/theme/demo228/assets/common/js/main.js"></script>
+<script>window.jQuery || document.write('<script src="/theme/demo228/assets/common/js/jquery.js"><\/script>')</script>
+<style>._sswm_popup__container {
+        border-color: #185880;
+    }</style>
+<script> var lng = 'ru';
+    var _ssvm_nextvideo = '';
+    var _ssvm_hideonclick = 0;
+    var _notify_plugin = 'iziToast';
+    var jsalerts = "1";
+    var _error = "";
+    var _success = "";</script>
+<div class="_sswm_popup" onclick="_sswm_hideonclick();">
+    <div class="_sswm_container-wrapper">
+        <div class="_sswm_popup__container popup__container_bg1" id="_sswm_videocontainer">
+            <div class="_sswm_popup__close" onclick="_sswm_hidevideo();">X</div>
+            <!--iframe src="" frameborder="0" allowfullscreen=""></iframe--></div>
+    </div>
+</div>
+<script src="/theme/demo228/assets/common/js/sswm.js"></script>
+<script src="/theme/demo228/assets/common/js/popups_alerts_alax.js"></script>
+<script src="/theme/demo228/assets/common/js/sweetalert.min.js"></script>
+<script src="/theme/demo228/assets/common/js/iziToast.js"></script>
+<script src="/theme/demo228/assets/common/js/app.js"></script>
+<script src="/theme/demo228/assets/common/js/script.js"></script>
+</body>
+</html> 
