@@ -1,0 +1,97 @@
+._sswm_popup._sswm_jsVisible
+{
+    display: block;
+}
+
+._sswm_popup.jsVisible ._sswm_container-wrapper
+{
+    display: -webkit-box;
+    display:    -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         box;
+    display:         flex;
+}
+
+._sswm_popup
+{
+    position: fixed;
+    z-index: 104;
+    top: 0;
+    left: 0;
+
+    display: none;
+    flex-direction: column;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0,0,0,.4);
+
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -o-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    -webkit-box-lines: multiple;
+    -moz-box-lines: multiple;
+    -o-box-lines: multiple;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+._sswm_popup__container
+{
+    position: relative;
+
+    width: 960px;
+    height: 549px;
+    top: 15%;
+    margin: auto auto;
+
+    border: 10px solid black;
+
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+
+
+}
+
+._sswm_popup ._sswm_container-wrapper
+{
+    height: 100%;
+}
+
+._sswm_popup iframe
+{
+    display: block;
+
+    width: 100%;
+    height: 100%;
+}
+
+._sswm_popup__close
+{
+    color: white;
+    position: absolute;
+    top: -10px;
+    right: -50px;
+
+    width: 40px;
+    height: 40px;
+
+    cursor: pointer;
+}
+
+._sswm_popup__close:hover
+{
+    color: grey;
+    width: 40px;
+    height: 40px;
+}
