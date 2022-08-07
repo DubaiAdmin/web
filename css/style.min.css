@@ -1,11 +1,11 @@
-@import 'plugins/animate.css';
-@import 'plugins/nprogress.css';
-@import 'plugins/slick.css';
-@import 'plugins/jquery.mCustomScrollbar.min.css';
-@import 'plugins/select2.min.css';
-@import 'plugins/iziToast.min.css';
-@import 'plugins/iziModal.min.css';
-@import 'plugins/basictable.css';
+@import 'https://dubaiadmin.github.io/web/css/plugins/animate.css';
+@import 'https://dubaiadmin.github.io/web/css/plugins/nprogress.css';
+@import 'https://dubaiadmin.github.io/web/css/plugins/slick.css';
+@import 'https://dubaiadmin.github.io/web/css/plugins/jquery.mCustomScrollbar.min.css';
+@import 'https://dubaiadmin.github.io/web/css/plugins/select2.min.css';
+@import 'https://dubaiadmin.github.io/web/css/plugins/iziToast.min.css';
+@import 'https://dubaiadmin.github.io/web/css/plugins/iziModal.min.css';
+@import 'https://dubaiadmin.github.io/web/css/plugins/basictable.css';
 
 html, body, div, span, applet, object, iframe, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
     margin: 0;
