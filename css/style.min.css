@@ -1,11 +1,11 @@
-@import 'https://cryptodoubler.top/css/plugins/animate.css';
-@import 'https://cryptodoubler.top/css/plugins/nprogress.css';
-@import 'https://cryptodoubler.top/css/plugins/slick.css';
-@import 'https://cryptodoubler.top/css/plugins/jquery.mCustomScrollbar.min.css';
-@import 'https://cryptodoubler.top/css/plugins/select2.min.css';
-@import 'https://cryptodoubler.top/css/plugins/iziToast.min.css';
-@import 'https://cryptodoubler.top/css/plugins/iziModal.min.css';
-@import 'https://cryptodoubler.top/css/plugins/basictable.css';
+@import '/web/css/plugins/animate.css';
+@import '/web/css/plugins/nprogress.css';
+@import '/web/css/plugins/slick.css';
+@import '/web/css/plugins/jquery.mCustomScrollbar.min.css';
+@import '/web/css/plugins/select2.min.css';
+@import '/web/css/plugins/iziToast.min.css';
+@import '/web/css/plugins/iziModal.min.css';
+@import '/web/css/plugins/basictable.css';
 
 html, body, div, span, applet, object, iframe, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
     margin: 0;
