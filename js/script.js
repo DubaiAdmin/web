@@ -41,22 +41,22 @@
 	function get_server_event() {
 		$.when(send_ajax('all='+all_id+'&my='+my_id+'&pays='+pays_id+'&referal='+referal_id,'/ajax/my_events')).done(function(data) {
 			if(data.pays.all_deposits.length) {
-				pays_add_to_table('#all_deposits',data.pays.all_deposits,'ÐÐºÑ‚Ð¸Ð²Ð¸Ñ€Ð¾Ð²Ð°Ð½ Ð½Ð¾Ð²Ñ‹Ð¹ Ð´ÐµÐ¿Ð¾Ð·Ð¸Ñ‚, Ð²Ñ‹Ð¿Ð»Ð°Ñ‚Ð° Ñ‡ÐµÑ€ÐµÐ· 150 Ñ‡Ð°ÑÐ¾Ð²',false);
+				pays_add_to_table('#all_deposits',data.pays.all_deposits,'Активирован новый депозит, выплата через 150 часов',false);
 				all_id=get_last_id('#all_deposits');
 			}
 
 			if(data.pays.my_deposits.length) {
-				pays_add_to_table('#my_deposits',data.pays.all_deposits,'ÐœÑ‹ Ð¿Ð¾Ð»ÑƒÑ‡Ð¸Ð»Ð¸ Ð¾Ñ‚ Ð²Ð°Ñ Ð¿Ð»Ð°Ñ‚ÐµÐ¶, Ð·Ð°Ð³Ð»ÑÐ½Ð¸Ñ‚Ðµ Ð² "ÐœÐ¾Ð¸ Ð´ÐµÐ¿Ð¾Ð·Ð¸Ñ‚Ñ‹"',true);
+				pays_add_to_table('#my_deposits',data.pays.all_deposits,'Мы получили от вас платеж, загляните в "Мои депозиты"',true);
 				my_id=get_last_id('#my_deposits');
 			}
 
 			if(data.pays.pays.length) {
-				pays_add_to_table('#pays',data.pays.pays,'ÐŸÑ€Ð¾Ð¸Ð·Ð²ÐµÐ´ÐµÐ½Ð° Ð²Ñ‹Ð¿Ð»Ð°Ñ‚Ð°',false);
+				pays_add_to_table('#pays',data.pays.pays,'Произведена выплата',false);
 				pays_id=get_last_id('#pays');
 			}
 
 			if(data.pays.my_referals.length) {
-				pays_add_to_table('#referals',data.pays.my_referals,'Ð£ Ð²Ð°Ñ Ð¿Ð¾ÑÐ²Ð¸Ð»ÑÑ Ð¿Ñ€Ð¾Ð¿Ð»Ð°Ñ‡ÐµÐ½Ð½Ñ‹Ð¹ Ñ€ÐµÑ„ÐµÑ€Ð°Ð»!',true);
+				pays_add_to_table('#referals',data.pays.my_referals,'У вас появился проплаченный реферал!',true);
 				referal_id=get_last_id('#referals');
 			}
 
@@ -128,3 +128,130 @@
 			}
 		});*/
 	}
+
+	function autoselectps(wallet){
+		console.log(wallet);
+		
+	  //var wallet=$('input[name="wallet"]').val();		  
+      if(wallet[0]=="D" && wallet.length>=31){
+          var newclass="DogeCoin";
+        }else
+        if(wallet[0]=="0" && wallet[1]=="x"){
+          var newclass="Ethereum";
+        }else    
+        if(wallet[0]=="U" && wallet.length>5){
+          var newclass="PerfectMoney";
+        }else
+        if(wallet[0]=="P" && wallet.length>5){
+          var newclass="Payeer";
+        }else
+        if(wallet[0]=="l" && wallet[1]=="t" && wallet[1]=="c" && wallet.length>70){
+          var newclass="LiteCoin";
+        }else
+        if(wallet[0]=="L" && wallet.length>30){
+          var newclass="LiteCoin";
+        }else
+        if(wallet[0]=="M" && wallet.length>30){
+			
+			iziToast.error({
+				title: "Error",
+				message: "Incorrect wallet number",
+				theme: 'light',
+				position: 'topRight',
+				titleSize: '24',
+				messageSize: '14',
+				maxWidth: '377',
+				icon: true,
+				timeout: 5000,
+				transitionIn: 'fadeInLeft',
+				transitionOut: 'fadeOutRight',
+				transitionInMobile: 'fadeInLeft',
+				transitionOutMobile: 'fadeOutLeft'
+			});
+			$("input[name=wallet]").val("");
+			$("form#auth_form button").click(function(event){
+			  event.preventDefault(); 
+			});
+          //var newclass="LiteCoin";
+        }else
+        if(wallet[0]=="b" && wallet[1]=="c" && wallet.length>70){
+          var newclass="BitCoin";
+        }
+        else  
+        if(wallet[0]=="3" && wallet.length>30){
+          if($('select[name="typeofwallet"]').val()!='LiteCoin'){
+              var newclass="BitCoin";        
+          }else{
+              var newclass="LiteCoin";    
+          }
+        }else
+        if(wallet[0]=="1" && wallet.length>30){
+          var newclass="BitCoin";
+        }else{
+          var newclass="none";
+        }
+      if(newclass!="none"){		
+        $('#js-system').val(newclass);
+        $('.label_icon [class^="svg-system--"]').css('display', 'none');
+        $('.label_icon .svg-system--' + newclass).css('display', 'block');
+		$('#auth_error').text('');
+		console.log(newcalss)
+		// $('.payment_system').toggleClass('none');
+          // fpJS(newclass);
+      }
+    }
+
+
+
+
+	$('.label_icon').click(function () {
+        $('.payment_system').toggleClass('none');
+    });
+    $('.payment_system--item').click(function () {
+        let system = $(this).data('system');
+        $('#js-system').val(system);
+        $('[class^="svg-system--"]').css('display', 'none');
+        $('.svg-system--' + system).css('display', 'block');
+        $('#auth_error').text('');
+		$('.payment_system').toggleClass('none');
+    });
+
+
+    (function () {
+        $("#auth_form").submit(function () {
+            var $form = $(this);
+            $.ajax({
+                type: "post",
+                url: '/ajax/auth_user.php',
+                data: $form.serialize(),
+                success: function (data) {
+                    if (!data.error) {
+                        $("#auth_error")
+                            .css("color", "blue")
+                            .css("font-weight", "bold")
+                            .text(data.message);
+                        window.setTimeout(function () {
+                            window.location.reload();
+                        }, 1000);
+                    } else if (data.error && data.message) {
+                        $("#auth_error")
+                            .css("color", "red")
+                            .css("font-weight", "bold")
+                            .text(data.message);
+                    } else {
+                        $("#auth_error")
+                            .css("color", "red")
+                            .css("font-weight", "bold")
+                            .text("Ошибка ответа сервера!");
+                    }
+					// grecaptcha.reset(captcha_modal_login);
+                },
+                error: function () {
+                    window.alert("Ошибка запроса!");
+                },
+            });
+            return false;
+        });
+    })();
+	
+	
