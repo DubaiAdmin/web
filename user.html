@@ -19,81 +19,90 @@
   <script src="/web/script/wow.js"></script>
   <script src="/web/script/wow.min.js"></script>
   <script src="//icon-box.live/sprite/latest/"></script>
-  <style>
+    <style>
+      .brit__lang {
+        display: inline-block;
+        position: relative;
+        width: 155px;
+        text-align: center;
+        white-space: nowrap;
+        color: #fff;
+      }
+      @media only screen and (max-width: 576px) {
         .brit__lang {
-                        display: inline-block position: relative;
-                        width: 155px text-align: center;
-                        white-space: nowrap;
-                        color: #fff;
-                }
-                
-                @media only screen and (max-width: 576px) {
-                        .brit__lang {
-                                width: 110px
-                        }
-                }
-                
-                .brit__lang.active -webkit-transition: all ease-in 0.2s;
-                -o-transition: all ease-in 0.2s;
-                transition: all ease-in 0.2s;
-                -webkit-border-radius: 5px 5px 0 0;
-                border-radius: 5px 5px 0 0;
+          width: 110px;
         }
-        .brit__lang.active .brit__lang-current i {
-                -webkit-transition: all ease-in 0.2s;
-                -o-transition: all ease-in 0.2s;
-                transition: all ease-in 0.2s;
-                -webkit-transform: rotate(-180deg);
-                -ms-transform: rotate(-180deg);
-                transform: rotate(-180deg);
-        }
-        .brit__lang.active .brit__lang-items {
-                -webkit-transition: all ease-in 0.2s;
-                -o-transition: all ease-in 0.2s;
-                transition: all ease-in 0.2s;
-                visibility: visible;
-                top: 100%;
-                opacity: 1 -webkit-border-radius: 0 0 5px 5px;
-                border-radius: 0 0 5px 5px;
-        }
-        .brit_lang-current {
-                background-color: rgba(108, 102, 174);
-                height: 40px;
-                line-height: 40px -webkit-border-radius: 50px;
-                border-radius: 50px font-size: 15px;
-                font-weight: 700 cursor: pointer;
-                -webkit-transition: all ease-in 0.2s;
-                -o-transition: all ease-in 0.2s;
-                transition: all ease-in 0.2s;
-        }
-        .brit__lang-current:hover {
-                background-color: rgba(143, 133, 171, 0.32);
-        }
-        .brit__lang-current i {
-                font-size: 12px;
-                -webkit-transition: all ease-in 0.2s;
-                -o-transition: all ease-in 0.2s;
-                transition: all ease-in 0.2s;
-        }
-        .brit_lang-items {
-                position: absolute;
-                width: 100% top: 100%;
-                left: 0;
-                background-color: rgba(108, 102, 174);
-                -webkit-border-radius: 5px;
-                border-radius: 5px border-top: 1px solid rgba(255, 255, 255, 0.1);
-                top: 110%;
-                opacity: 0 visibility: hidden;
-                -webkit-transition: all ease-in 0.2s;
-                -o-transition: all ease-in 0.2s;
-                transition: all ease-in 0.2s;
-        }
-        .brit__lang-items-item {
-                padding: 5px 0 color: #fff;
-                display: block;
-                width: 100%
-        }
-  </style>
+      }
+      .brit__lang.active .brit__lang-current {
+        -webkit-transition: all ease-in 0.2s;
+        -o-transition: all ease-in 0.2s;
+        transition: all ease-in 0.2s;
+        -webkit-border-radius: 5px 5px 0 0;
+        border-radius: 5px 5px 0 0;
+      }
+      .brit__lang.active .brit__lang-current i {
+        -webkit-transition: all ease-in 0.2s;
+        -o-transition: all ease-in 0.2s;
+        transition: all ease-in 0.2s;
+        -webkit-transform: rotate(-180deg);
+        -ms-transform: rotate(-180deg);
+        transform: rotate(-180deg);
+      }
+      .brit__lang.active .brit__lang-items {
+        -webkit-transition: all ease-in 0.2s;
+        -o-transition: all ease-in 0.2s;
+        transition: all ease-in 0.2s;
+        visibility: visible;
+        top: 100%;
+        opacity: 1;
+        -webkit-border-radius: 0 0 5px 5px;
+        border-radius: 0 0 5px 5px;
+      }
+      .brit__lang-current {
+        background-color: rgba(108, 102, 174);
+        height: 40px;
+        line-height: 40px;
+        -webkit-border-radius: 50px;
+        border-radius: 50px;
+        font-size: 15px;
+        font-weight: 700;
+        cursor: pointer;
+        -webkit-transition: all ease-in 0.2s;
+        -o-transition: all ease-in 0.2s;
+        transition: all ease-in 0.2s;
+      }
+      .brit__lang-current:hover {
+        background-color: rgba(143, 133, 171, 0.32);
+      }
+      .brit__lang-current i {
+        font-size: 12px;
+        -webkit-transition: all ease-in 0.2s;
+        -o-transition: all ease-in 0.2s;
+        transition: all ease-in 0.2s;
+      }
+      .brit__lang-items {
+        position: absolute;
+        width: 100%;
+        top: 100%;
+        left: 0;
+        background-color: rgba(108, 102, 174);
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        top: 110%;
+        opacity: 0;
+        visibility: hidden;
+        -webkit-transition: all ease-in 0.2s;
+        -o-transition: all ease-in 0.2s;
+        transition: all ease-in 0.2s;
+      }
+      .brit__lang-items-item {
+        padding: 5px 0;
+        color:#fff;
+        display: block;
+        width: 100%;
+      }
+    </style>
   <script type="text/javascript">
                 //// Get the CryptoCurrency Information from the API
                 jQuery.ajax({
