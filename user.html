@@ -103,22 +103,22 @@
         width: 100%;
       }
     </style>
-  <script type="text/javascript">
-                //// Get the CryptoCurrency Information from the API
-                jQuery.ajax({
-                        url: "https://min-api.cryptocompare.com/data/pricemulti",
-                        data: "fsyms=BTC,ETH,DASH,LTC&tsyms=USD",
-                        dataType: 'json'
-                }).done(function(data) {
-                        // console.log( "BTC : " + data.BTC.USD + ", ETH : " + data.ETH.USD + ", DASH : " + data.DASH.USD, LTC : " + data.LTC.USD );
-                        jQuery(".dashCoin").html('$' + data.DASH.USD);
-                        jQuery(".ethCoin").html('$' + data.ETH.USD);
-                        jQuery(".bitCoin").html('$' + data.BTC.USD);
-                        jQuery(".liteCoin").html('$' + data.LTC.USD);
-                }).fail(function() {
-                        console.log("API error");
-                });
-  </script>
+   <script type="text/javascript">
+      //// Get the CryptoCurrency Information from the API
+      jQuery.ajax({
+        url: "https://min-api.cryptocompare.com/data/pricemulti",
+        data: "fsyms=BTC,ETH,DASH,LTC&tsyms=USD",
+        dataType : 'json',
+      }).done(function(data) {
+        // console.log( "BTC : " + data.BTC.USD + ", ETH : " + data.ETH.USD + ", DASH : " + data.DASH.USD, LTC : " + data.LTC.USD);
+        jQuery(".dashCoin").html('$' + data.DASH.USD);
+        jQuery(".ethCoin").html('$' + data.ETH.USD);
+        jQuery(".bitCoin").html('$' + data.BTC.USD);
+        jQuery(".liteCoin").html('$' + data.LTC.USD);
+      }).fail(function() {
+          console.log( "API error" );
+      });
+    </script>
 </head>
 <body>
   <div class="wrapper">
@@ -641,75 +641,64 @@
   <script src="/web/script/clipboard.min.js"></script> 
   <script src='/web/script/script.js'></script> 
   <script>
-
-
-        $(".brit__lang-current").click(function() {
-                $(this).closest(".brit__lang").toggleClass("active");
-        });
-  </script> 
-  <script>
-
-
-        new Clipboard('#copyLink');
-  </script> 
-  <script>
-
-
-        const plans = JSON.parse('[{"id":"1","description":"Start","percent":"50.000","floating_percent":"0","percent_min":"0.000", "percent_max":"0.000","count":"1","seconds":"86400","img":"","min":"10.00000000","max":"1000000.00000000","return" :"1","fake_invest":"0.00000000","start_data":"1661068560","end_data":"1672538400","status":"1","delete":"1","days":" "}]');
-
+      $(".brit__lang-current").click(function(){
+        $(this).closest(".brit__lang").toggleClass("active");
+      });
+    </script>
+    <script>
+      new Clipboard('#copyLink');
+    </script>
+          <script>
+        const plans = JSON.parse('[{"id":"1","description":"Start","percent":"50.000","floating_percent":"0","percent_min":"0.000","percent_max":"0.000","count":"1","seconds":"86400","img":"","min":"10.00000000","max":"1000000.00000000","return":"1","fake_invest":"0.00000000","start_data":"1661068560","end_data":"1672538400","status":"1","delete":"1","days":""}]');
         function calc(amount) {
-                let plan_id = Number($('#plane').val());
-                let percent = 0;
-                let count = 0;
-                let seconds = 0;
-                let plan_return = 0;
-                let date = new Date();
-                let check = false;
-                if(plans) {
-                        plans.forEach(function(plan) {
-                                if(amount >= Number(plan['min']) && amount <= Number(plan['max']) && plan_id === Number(plan['id'])) {
-                                        count = Number(plan['count']);
-                                        percent = Number(plan['percent']);
-                                        seconds = Number(plan['seconds']);
-                                        plan_return = Number(plan['return']);
-                                        date.setSeconds(date.getSeconds() + seconds * (count === 0 ? 1 : count));
-                                        check = true;
-                                }
-                        });
-                }
-                if(check) {
-                        const total = (amount / 100 * percent) * (count === 0 ? 1 : count) + Number(plan_return === 1 ? amount : 0) - amount;
-                        $('#net_profit').html(total.toFixed(2) + ' 
-                                                                                                                                                        <i class="fa fa-trx"><\/i>');
-                } else {
-                        $('#net_profit').html('----');
-                }
-                if(check) {
-                        const total = (amount / 100 * percent) * (count === 0 ? 1 : count) + Number(plan_return === 1 ? amount : 0);
-                        $('#total_return').html(total.toFixed(2) + ' 
-                                                                                                                                                        <i class="fa fa-trx"><\/i>');
-                } else {
-                        $('#total_return').html('----');
-                }
+        let plan_id = Number($('#plane').val());
+        let percent = 0;
+        let count = 0;
+        let seconds = 0;
+        let plan_return = 0;
+        let date = new Date();
+        let check = false;
+        if (plans) {
+            plans.forEach(function (plan) {
+            if (amount >= Number(plan['min']) && amount <= Number(plan['max']) && plan_id === Number(plan['id'])) {
+                count = Number(plan['count']);
+                percent = Number(plan['percent']);
+                seconds = Number(plan['seconds']);
+                plan_return = Number(plan['return']);
+                date.setSeconds(date.getSeconds() + seconds * (count === 0 ? 1 : count));
+                check = true;
+            }
+            });
         }
-        $("#amount").on("change keyup", function() {
-                calc($(this).val());
+        if (check) {
+            const total = (amount / 100 * percent) * (count === 0 ? 1 : count) + Number(plan_return === 1 ? amount : 0) - amount;
+            $('#net_profit').html(total.toFixed(2) + ' <i class="fa fa-trx"></i>');
+        } else {
+            $('#net_profit').html('----');
+        }
+        if (check) {
+            const total = (amount / 100 * percent) * (count === 0 ? 1 : count) + Number(plan_return === 1 ? amount : 0);
+            $('#total_return').html(total.toFixed(2) + ' <i class="fa fa-trx"></i>');
+        } else {
+            $('#total_return').html('----');
+        }
+        }
+        $("#amount").on("change keyup", function () {
+        calc($(this).val());
         });
-        $("#plane").on("change keyup", function() {
-                change_amount($(this).val());
-                calc($("#amount").val());
+        $("#plane").on("change keyup", function () {
+        change_amount($(this).val());
+        calc($("#amount").val());
         });
-        $(document).ready(function() {
-                calc($("#amount").val());
+        $(document).ready(function () {
+        calc($("#amount").val());
         });
-
         function change_amount(plan_id) {
-                let row = plans.filter((item) => Number(item.id) === Number(plan_id))[0];
-                let min = Number(row.min);
-                letmax = Number(row.max);
-                $('#amount').val(min);
+        let row = plans.filter((item) => Number(item.id) === Number(plan_id))[0];
+        let min = Number(row.min);
+        let max = Number(row.max);
+        $('#amount').val(min);
         }
-        
-  </script>
+      </script>
 </body>
 </html>
